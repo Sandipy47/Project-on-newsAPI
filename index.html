@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div id="News">
+        <label for="search"></label>
+        <input type="text" id="Search" placeholder="Search latest News">
+        <button id="btn">Go Ahead</button>
+    </div>
+    <hr>
+
+    <h1 class="marquee">Olly Worlds News</h1> 
+    <h2>A Page Where You Get the Latest News...</h2> 
+    
+    <div id="news-container"></div>
+    <div class="set">
+        <p>1.<u>International Relations & Conflict</u></p>
+        <p>2.<u>Global Economy</u></p>
+        <p>3.<u>Politics</u></p>
+        <p>4.<u>Environment & Climate</u></p>
+    </div>
+   
+    <!-- <script>
+        const apiKey = 'ff5098cb2c4145208089aa29ff72bc33'; 
+        const newsContainer = document.getElementById('news-container'); 
+        const searchInput = document.getElementById('Search');
+        const searchButton = document.getElementById('btn');
+
+        async function fetchNews(query = 'general') {
+            try {
+                const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}&q=${query}`;
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.status === 'ok' && data.articles) {
+                    displayNews(data.articles);
+                } else {
+                    newsContainer.innerHTML = '<p>Failed to load news.</p>';
+                    console.error("Error fetching news:", data);
+                }
+            } catch (error) {
+                newsContainer.innerHTML = '<p>An error occurred while fetching news.</p>';
+                console.error("Fetch error:", error);
+            }
+        }
+
+        function displayNews(articles) {
+            newsContainer.innerHTML = ''; 
+
+            articles.forEach(article => {
+                const newsItem = document.createElement('div');
+                newsItem.classList.add('news-item');
+
+                const title = document.createElement('h3');
+                title.textContent = article.title;
+
+                const description = document.createElement('p');
+                description.textContent = article.description || 'No description available.';
+
+                const link = document.createElement('a');
+                link.href = article.url;
+                link.textContent = 'Read More';
+                link.target = '_blank'; 
+
+                newsItem.appendChild(title);
+                newsItem.appendChild(description);
+                newsItem.appendChild(link);
+                newsContainer.appendChild(newsItem);
+            });
+        }
+
+       
+        fetchNews();
+
+       
+        searchButton.addEventListener('click', () => {
+            const query = searchInput.value.trim();
+            if (query) {
+                fetchNews(query);
+            } else {
+                fetchNews();
+            }
+        });
+
+        searchInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                searchButton.click();
+            }
+        });
+    </script> -->
+    <script src="script.js"></script>
+</body>
+</html>
